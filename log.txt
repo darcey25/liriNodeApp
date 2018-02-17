@@ -1,0 +1,232 @@
+
+
+User: Fernando Montez
+twitter handle: alexinho2025
+==================================
+Will dogs ever get tired of humans not throwing the ball? #ThrowTheBall #WeKnow #FetchingIsOnlyFunWhenYouThrowTheBall
+Fri Feb 16 06:24:05 +0000 2018
+==================================
+I wonder what cats think of #cats #Caturday #KittenBowl
+Fri Feb 16 06:22:20 +0000 2018
+==================================
+testing to see if liri works #liri #Nodejs
+Fri Feb 16 06:21:30 +0000 2018
+==================================
+Just setting up my Twitter. #myfirstTweet
+Fri Feb 16 06:20:21 +0000 2018
+==================================
+
+Song user searched for!
+
+Artist: Maluma
+Song: Felices los 4
+Album: Felices los 4
+Preview link: https://api.spotify.com/v1/tracks/0qYTZCo5Bwh1nsUFGZP3zn
+==================================
+Artist: Maluma
+Song: Felices los 4 - Salsa Version
+Album: Felices los 4 (Salsa Version)
+Preview link: https://api.spotify.com/v1/tracks/33F4IHQ2JcXWSDXNA9b4tK
+==================================
+Artist: Maluma
+Song: Felices los 4 - Urban Version
+Album: Felices los 4 (4 Versiones)
+Preview link: https://api.spotify.com/v1/tracks/6hI9Oa4K5yAeo9VlAxgXEg
+==================================
+Artist: Maluma
+Song: Felices los 4 - Pop Version
+Album: Felices los 4 (4 Versiones)
+Preview link: https://api.spotify.com/v1/tracks/0LyUyzxOby9ocxsPYZ9Z8K
+==================================
+Artist: Maluma
+Song: Felices los 4
+Album: Felices los 4 (4 Versiones)
+Preview link: https://api.spotify.com/v1/tracks/3cWzwUnSYm9IkXikWIZgcR
+==================================
+Artist: DJ Khalid
+Song: Felices los 4
+Album: Felices los 4
+Preview link: https://api.spotify.com/v1/tracks/411m0gUEfzmjrf7yPMR5dY
+==================================
+Artist: Maluma
+Song: Felices los 4 - Banda Version
+Album: Felices los 4 (4 Versiones)
+Preview link: https://api.spotify.com/v1/tracks/0qFQGSMwgYjG56TWGGqY6E
+==================================
+Artist: Kings of Regueton
+Song: Felices los 4 - Kings Version
+Album: Regueton 2018
+Preview link: https://api.spotify.com/v1/tracks/7oJyft2qY8or6NsDAsviUK
+==================================
+Artist: Paco Barrón y sus Norteños Clan
+Song: Popurrí Reggaetonero: Felices los Cuatro / Una Lady Como Tu / El Amante / Despacito
+Album: Popurrí Reggaetonero
+Preview link: https://api.spotify.com/v1/tracks/0yvAwIFY8n7lRFpzX7iTv2
+==================================
+Artist: Paco Barrón y sus Norteños Clan
+Song: Popurrí Reggaetonero (Versión Extendida) : Felices los Cuatro / Una Lady Como Tu / El Amante / Despacito / Darte un Beso
+Album: Popurrí Reggaetonero
+Preview link: https://api.spotify.com/v1/tracks/556D6XxSPCeHDtaEemy98A
+==================================
+Artist: Carolina García
+Song: Felices los Cuatro
+Album: Felices los Cuatro
+Preview link: https://api.spotify.com/v1/tracks/4bZWtfhsvgLkxBKbxsts7B
+==================================
+Artist: Eduardo Serraow
+Song: Felices los 4 - Dominican Remix
+Album: Felices los 4 (Dominican Remix)
+Preview link: https://api.spotify.com/v1/tracks/1tBFREGqTii00cYYzv7iMR
+==================================
+Artist: Regueton Mix
+Song: Chantaje - Felices Los 4 - Vacaciones - Escápate conmigo - La rompe corazones - Tu foto - Sobredosis - El Farsante - Superhéroe - Hasta el amanecer - El Amante - El perdón - Safari - Mi gente
+Album: Reggaeton Mix Para Fiestas
+Preview link: https://api.spotify.com/v1/tracks/4SiRNipJjNm2V6YGwZ9A7k
+==================================
+Artist: Ricki Sanchez
+Song: Felices los 4 - Remix Tropical
+Album: Felices los 4 (Remix Tropical)
+Preview link: https://api.spotify.com/v1/tracks/09el0i6EPbjDWtWTXvmuNb
+==================================
+Artist: Dj Johan
+Song: Felices Los 4 - Chantaje - Desde Esa Noche - Vente Pa Aca - Sin Contrato - Megamix Maluma 2017
+Album: Megamix Reggaeton 2017 (Vol. 3)
+Preview link: https://api.spotify.com/v1/tracks/1UIS27o3oraDnVxWTo3VHv
+==================================
+Artist: Robert Mendoza
+Song: Felices Los 4
+Album: Violin Covers, Vol. 2 (Deluxe Edition)
+Preview link: https://api.spotify.com/v1/tracks/2O8jJEdPQKki2BLisMBief
+==================================
+Artist: Bachata Mix Enamora'o
+Song: Felices Los 4 - Bachata
+Album: Romantiqueo
+Preview link: https://api.spotify.com/v1/tracks/1RT2A7BwzdMIslCMY2PBUU
+==================================
+Artist: Regueton Mix
+Song: Sí o No - Hey Ma - Felices Los 4 - La Rompe Corazones - Me Rehúso - Si No Vuelves - Escápate Conmigo - Me Enamoré
+Album: Reggaeton Top
+Preview link: https://api.spotify.com/v1/tracks/3yhxH6ouQBdWiLE5ugoBsJ
+==================================
+Artist: Cumbia Sonidera
+Song: Felices los Cuatro
+Album: Adolecentes Cumbia
+Preview link: https://api.spotify.com/v1/tracks/2qndxvYml6y92goWpKqvqr
+==================================
+Artist: Song Lovers
+Song: Felices los 4 - versión salsa
+Album: Felices los 4 - versión salsa
+Preview link: https://api.spotify.com/v1/tracks/67asC94vaiJYs85No8zNMj
+==================================
+
+Movie: The Avengers
+Year: 2012
+IMDB rating: 8.1/10
+Rotten Tomatoes rating: 92%
+Country produced: USA
+Language(s): English, Russian, Hindi
+Plot: Earth's mightiest heroes must come together and learn to fight as a team if they are going to stop the mischievous Loki and his alien army from enslaving humanity.
+Actors: Robert Downey Jr., Chris Evans, Mark Ruffalo, Chris Hemsworth
+
+Song user searched for!
+
+Artist: Backstreet Boys
+Song: I Want It That Way
+Album: The Hits--Chapter One
+Preview link: https://api.spotify.com/v1/tracks/6e40mgJiCid5HRAGrbpGA6
+==================================
+Artist: Backstreet Boys
+Song: I Want It That Way
+Album: The Essential Backstreet Boys
+Preview link: https://api.spotify.com/v1/tracks/68y6OIiE1nDdI1MLQdJNh8
+==================================
+Artist: Backstreet Boys
+Song: I Want It That Way
+Album: Millennium
+Preview link: https://api.spotify.com/v1/tracks/47BBI51FKFwOMlIiX6m8ya
+==================================
+Artist: Anthem Lights
+Song: I Want It That Way
+Album: Covers Part IV
+Preview link: https://api.spotify.com/v1/tracks/3Ww6kEWxLh4Ub4WPJ9hMtA
+==================================
+Song: Bye Bye Bye / I Want It That Way (Glee Cast Version)
+Artist: Glee Cast
+Album: Bye Bye Bye / I Want It That Way (Glee Cast Version)
+Preview link: https://api.spotify.com/v1/tracks/3t7m7AzV2ntuI9fIT6KREP
+==================================
+Artist: Manuel Costa
+Song: I Want It That Way
+Album: I Want It That Way
+Preview link: https://api.spotify.com/v1/tracks/4Sp4RxkWukxqJykl0ySNQi
+==================================
+Artist: Backstreet Boys
+Song: I Want It That Way
+Album: 90 Sweet 90s Hits!
+Preview link: https://api.spotify.com/v1/tracks/1zCiqxhampG4dcC7HEqPu5
+==================================
+Artist: "Weird Al" Yankovic
+Song: Ebay (Parody of "I Want It That Way" by the Backstreet Boys)
+Album: Poodle Hat
+Preview link: https://api.spotify.com/v1/tracks/4vHb50VkxDzHYwLiHfWczK
+==================================
+Artist: Dynamite Boy
+Song: I Want It That Way
+Album: Punk Goes Pop
+Preview link: https://api.spotify.com/v1/tracks/0F5f29urvisi4TiwJOQZWN
+==================================
+Artist: Landon Austin & Julia Sheer
+Song: I Want It That Way
+Album: I Want It That Way
+Preview link: https://api.spotify.com/v1/tracks/1zUJq8Ap2u9MyDo0HJxVU5
+==================================
+Artist: Boyce Avenue
+Song: I Want It That Way
+Album: New Acoustic Sessions, Vol. 3
+Preview link: https://api.spotify.com/v1/tracks/4YmJGDRo6oGhObb7MaW5om
+==================================
+Artist: Kyle Olthoff
+Song: I Want It That Way
+Album: I Want It That Way
+Preview link: https://api.spotify.com/v1/tracks/1UUw0IsDzxCxJ6v0dlygUy
+==================================
+Artist: Steel Panther
+Song: I Want It That Way
+Album: I Want It That Way
+Preview link: https://api.spotify.com/v1/tracks/0448cNUvZGCAlUpIPO5kdY
+==================================
+Artist: "Weird Al" Yankovic
+Song: Ebay (Parody of "I Want It That Way" by the Backstreet Boys)
+Album: The Essential "Weird Al" Yankovic
+Preview link: https://api.spotify.com/v1/tracks/1vaico2C72imYowF4Kv04V
+==================================
+Artist: Backstreet Boys
+Song: I Want It That Way
+Album: NOW That's What I Call 90s Pop
+Preview link: https://api.spotify.com/v1/tracks/75W4IDdKhHvRQZpaDx9YPg
+==================================
+Artist: Backstreet Boys
+Song: I Want It That Way
+Preview link: https://api.spotify.com/v1/tracks/2KMwtsWwL5QDtSpm814tju
+Album: NKOTBSB
+==================================
+Artist: Scott Bradlee's Postmodern Jukebox
+Song: I Want It That Way
+Album: Selfies on Kodachrome
+Preview link: https://api.spotify.com/v1/tracks/1Le3uYU5NU9cXXtYeSWnEM
+==================================
+Artist: Jason Chen
+Song: I Want It That Way
+Album: I Want It That Way
+Preview link: https://api.spotify.com/v1/tracks/3YugF8eBqmkUDLwFvTfCVB
+==================================
+Artist: FROIDZ
+Song: I Want It That Way
+Preview link: https://api.spotify.com/v1/tracks/2mXiYb6c52iMmRbP10KUin
+Album: I Want It That Way
+==================================
+Artist: Scary Pockets
+Song: I Want It That Way
+Album: Nu Funk
+Preview link: https://api.spotify.com/v1/tracks/4IWQXV01Lp0wsXCXo09EBr
+==================================
