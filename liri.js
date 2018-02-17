@@ -11,14 +11,14 @@ var nodeArguments = process.argv;
 var userSearch = "";
 
 for (var i = 3; i < nodeArguments.length; i++) {
-	if (i > 2 && i < nodeArguments.length) {
+	if (i > 3 && i < nodeArguments.length) {
 		userSearch = userSearch + "+" + nodeArguments[i];
 	}
   	else {
     	userSearch += nodeArguments[i];
   	}
 }
-console.log(userSearch);
+console.log("hi alex" + userSearch);
 
 if (nodeArguments[2] === "my-tweets") {
 	tweet();
@@ -81,6 +81,9 @@ function tweet() {
 }
 
 function song() {
+	if (userSearch === "") {
+		userSearch = "the+sign";
+	}
 	spotify.search({ type: "track", query: userSearch}, function(err, data) {
 		console.log(userSearch);
   		if (err) {
@@ -99,11 +102,15 @@ function song() {
 }
 
 function movie() {
-	var queryUrl = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=trilogy";
+	if (userSearch === "") {
+		var queryUrl = "http://www.omdbapi.com/?t=Mr+Nobody&y=&plot=short&apikey=trilogy";
+	}
+	else {
+		var queryUrl = "http://www.omdbapi.com/?t=" + userSearch + "&y=&plot=short&apikey=trilogy";
+	}
 
 	request(queryUrl, function(error, response, body) {
 		if (!error && response.statusCode === 200) {
-			console.log(body);
 			console.log("Movie: " + JSON.parse(body).Title);
 			console.log("Year: " + JSON.parse(body).Year);
 			console.log("IMDB rating: " + JSON.parse(body).Ratings[0].Value);
