@@ -1,14 +1,10 @@
-// console.log("this is loaded");
-
-exports.twitter = {
-	consumer_key: process.env.TWITTER_CONSUMER_KEY,
-	consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
-	access_token_key: process.env.TWITTER_ACCESS_TOKEN_KEY,
-	access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
-};
-
 exports.spotify = {
 	id: process.env.SPOTIFY_ID,
 	secret: process.env.SPOTIFY_SECRET
 };
 
+// "trilogy" is the shared OMDb key from the coding bootcamp; set your own
+// (free at https://www.omdbapi.com/apikey.aspx) in .env.
+exports.omdb = {
+	key: process.env.OMDB_API_KEY || "trilogy"
+};
