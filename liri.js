@@ -1,122 +1,132 @@
-require("dotenv").config();
-var Twitter = require("twitter");
-var Spotify = require("node-spotify-api");
-var request = require("request");
+// Load API credentials from .env when it exists (Node 20.12+ built-in).
+try {
+	process.loadEnvFile();
+} catch (error) {
+	// No .env file; use whatever is already in the environment.
+}
 var fs = require("fs");
 var apiKeys = require("./keys.js");
 
 // global variables
 var logFile = "log.txt";
-var client = new Twitter(apiKeys.twitter);
-var spotify = new Spotify(apiKeys.spotify);
 var nodeArguments = process.argv;
-var userSearch = "";
+var userSearch = nodeArguments.slice(3).join(" ");
 
-// extracts the song or movie the user wants to search
-for (var i = 3; i < nodeArguments.length; i++) {
-	if (i > 3 && i < nodeArguments.length) {
-		userSearch = userSearch + "+" + nodeArguments[i];
+// calls a specific command depending on the user command input
+runCommand(nodeArguments[2]);
+
+function runCommand(command) {
+	if (command === "my-tweets") {
+		tweet();
 	}
-  	else {
-    	userSearch += nodeArguments[i];
-  	}
+	else if (command === "spotify-this-song") {
+		song();
+	}
+	else if (command === "movie-this") {
+		movie();
+	}
+	else if (command === "do-what-it-says") {
+		doThis();
+	}
+	else {
+		console.log("Sorry, only valid commands at this time are: my-tweets, spotify-this-song, movie-this, do-what-it-says");
+	}
 }
 
-// calls a specific command depending on the user command input 
-if (nodeArguments[2] === "my-tweets") {
-	tweet();
+function log(text) {
+	fs.appendFile(logFile, text, function(error) {
+		if (error) {
+			console.log(error);
+		}
+	});
 }
-else if (nodeArguments[2] === "spotify-this-song") {
-	song();
-}
-else if (nodeArguments[2] === "movie-this") {
-	movie();
-}
-else if (nodeArguments[2]  === "do-what-it-says") {
-	doThis();
-}
-
 
 // functions
 function tweet() {
-	var params = {screen_name: "@alexinho2025", count: 20};
-	client.get("statuses/user_timeline", params, function(error, tweets, response) {
-	if (error) {
-		console.log(error);
-	}
-	else {
-		fs.appendFile(logFile, "\n\nUser: " + tweets[0].user.name,(error)=>{if(error){console.log(error)}});
-		fs.appendFile(logFile, "\ntwitter handle: " + tweets[0].user.screen_name,(error)=>{if(error){console.log(error)}});
-		fs.appendFile(logFile, "\n==================================",(error)=>{if(error){console.log(error)}});
-		console.log("User: " + tweets[0].user.name);
-		console.log("twitter handle: " + tweets[0].user.screen_name);
-		console.log("==================================");
-			for(var i = 0; i < tweets.length; i++) {
-				fs.appendFile(logFile, "\n"+tweets[i].text,(error)=>{if(error){console.log(error)}});
-				fs.appendFile(logFile, "\n"+tweets[i].created_at,(error)=>{if(error){console.log(error)}});
-				fs.appendFile(logFile, "\n==================================",(error)=>{if(error){console.log(error)}});
-				console.log(tweets[i].text);
-				console.log(tweets[i].created_at);
-				console.log("==================================");
-			}
+	// Twitter (now X) shut down free access to the v1.1 timeline API in 2023,
+	// and the "twitter" npm package it used is no longer maintained.
+	console.log("my-tweets is no longer available: the Twitter/X API now requires a paid plan.");
+}
+
+function getSpotifyToken() {
+	var credentials = Buffer.from(apiKeys.spotify.id + ":" + apiKeys.spotify.secret).toString("base64");
+	return fetch("https://accounts.spotify.com/api/token", {
+		method: "POST",
+		headers: {
+			"Authorization": "Basic " + credentials,
+			"Content-Type": "application/x-www-form-urlencoded"
+		},
+		body: "grant_type=client_credentials"
+	}).then(function(response) {
+		if (!response.ok) {
+			throw new Error("Spotify login failed (" + response.status + "). Check SPOTIFY_ID and SPOTIFY_SECRET in .env.");
 		}
+		return response.json();
+	}).then(function(data) {
+		return data.access_token;
 	});
 }
 
 function song() {
 	if (userSearch === "") {
-		userSearch = "the+sign";
+		userSearch = "the sign";
 	}
-	spotify.search({ type: "track", query: userSearch}, function(err, data) {
-		console.log(userSearch);
-  		if (err) {
-    		console.log('Error occurred: ' + err);
-  		}
- 		else {
- 			fs.appendFile(logFile, "\n\nSong user searched for!\n",(error)=>{if(error){console.log(error)}});
-			for(var i = 0; i < data.tracks.items.length; i++) {
-				fs.appendFile(logFile, "\nArtist: " + data.tracks.items[i].artists[0].name, (error)=>{if(error){console.log(error)}});
-				fs.appendFile(logFile, "\nSong: " + data.tracks.items[i].name, (error)=>{if(error){console.log(error)}});
-				fs.appendFile(logFile, "\nAlbum: " + data.tracks.items[i].album.name, (error)=>{if(error){console.log(error)}});
-				fs.appendFile(logFile, "\nPreview link: " + data.tracks.items[i].href, (error)=>{if(error){console.log(error)}});
-				fs.appendFile(logFile, "\n==================================", (error)=>{if(error){console.log(error)}});
-				console.log("Artist: " + data.tracks.items[i].artists[0].name);
-				console.log("Song: " + data.tracks.items[i].name);
-				console.log("Album: " + data.tracks.items[i].album.name);
-				console.log("Preview link: " + data.tracks.items[i].href);
-				console.log("==================================");
-			}
+	console.log(userSearch);
+	getSpotifyToken().then(function(token) {
+		var url = "https://api.spotify.com/v1/search?type=track&q=" + encodeURIComponent(userSearch);
+		return fetch(url, { headers: { "Authorization": "Bearer " + token } });
+	}).then(function(response) {
+		if (!response.ok) {
+			throw new Error("Spotify search failed (" + response.status + ")");
 		}
+		return response.json();
+	}).then(function(data) {
+		log("\n\nSong user searched for!\n");
+		data.tracks.items.forEach(function(track) {
+			var lines = [
+				"Artist: " + track.artists[0].name,
+				"Song: " + track.name,
+				"Album: " + track.album.name,
+				"Preview link: " + track.external_urls.spotify,
+				"=================================="
+			];
+			log("\n" + lines.join("\n"));
+			console.log(lines.join("\n"));
+		});
+	}).catch(function(err) {
+		console.log("Error occurred: " + err.message);
 	});
 }
 
 function movie() {
-	if (userSearch === "") {
-		var queryUrl = "http://www.omdbapi.com/?t=Mr+Nobody&y=&plot=short&apikey=trilogy";
-	}
-	else {
-		var queryUrl = "http://www.omdbapi.com/?t=" + userSearch + "&y=&plot=short&apikey=trilogy";
-	}
+	var title = userSearch === "" ? "Mr. Nobody" : userSearch;
+	var queryUrl = "https://www.omdbapi.com/?t=" + encodeURIComponent(title) + "&plot=short&apikey=" + encodeURIComponent(apiKeys.omdb.key);
 
-	request(queryUrl, function(error, response, body) {
-		if (!error && response.statusCode === 200) {
-			fs.appendFile(logFile, "\n\nMovie: " + JSON.parse(body).Title, (error)=>{if(error){console.log(error)}});
-			fs.appendFile(logFile, "\nYear: " + JSON.parse(body).Year, (error)=>{if(error){console.log(error)}});
-			fs.appendFile(logFile, "\nIMDB rating: " + JSON.parse(body).Ratings[0].Value, (error)=>{if(error){console.log(error)}});
-			fs.appendFile(logFile, "\nRotten Tomatoes rating: " + JSON.parse(body).Ratings[1].Value, (error)=>{if(error){console.log(error)}});
-			fs.appendFile(logFile, "\nCountry produced: " + JSON.parse(body).Country, (error)=>{if(error){console.log(error)}});
-			fs.appendFile(logFile, "\nLanguage(s): " + JSON.parse(body).Language, (error)=>{if(error){console.log(error)}});
-			fs.appendFile(logFile, "\nPlot: " + JSON.parse(body).Plot, (error)=>{if(error){console.log(error)}});
-			fs.appendFile(logFile, "\nActors: " + JSON.parse(body).Actors, (error)=>{if(error){console.log(error)}});
-			console.log("Movie: " + JSON.parse(body).Title);
-			console.log("Year: " + JSON.parse(body).Year);
-			console.log("IMDB rating: " + JSON.parse(body).Ratings[0].Value);
-			console.log("Rotten Tomatoes rating: " + JSON.parse(body).Ratings[1].Value);
-			console.log("Country produced: " + JSON.parse(body).Country);
-			console.log("Language(s): " + JSON.parse(body).Language);
-			console.log("Plot: " + JSON.parse(body).Plot);
-			console.log("Actors: " + JSON.parse(body).Actors);
+	fetch(queryUrl).then(function(response) {
+		if (!response.ok) {
+			throw new Error("OMDb request failed (" + response.status + ")");
 		}
+		return response.json();
+	}).then(function(body) {
+		if (body.Response === "False") {
+			console.log(body.Error);
+			return;
+		}
+		var ratings = body.Ratings || [];
+		var lines = [
+			"Movie: " + body.Title,
+			"Year: " + body.Year,
+			"IMDB rating: " + (ratings[0] ? ratings[0].Value : "N/A"),
+			"Rotten Tomatoes rating: " + (ratings[1] ? ratings[1].Value : "N/A"),
+			"Country produced: " + body.Country,
+			"Language(s): " + body.Language,
+			"Plot: " + body.Plot,
+			"Actors: " + body.Actors
+		];
+		log("\n\n" + lines.join("\n"));
+		console.log(lines.join("\n"));
+	}).catch(function(err) {
+		console.log("Error occurred: " + err.message);
 	});
 }
 
@@ -128,22 +138,14 @@ function doThis() {
 		else {
 			var dataArr = data.split(",");
 			var command = dataArr[0].trim();
-			userSearch = dataArr[1];
+			userSearch = (dataArr[1] || "").trim().replace(/^"|"$/g, "");
 			console.log(command);
 			console.log(userSearch);
-			if (command === "my-tweets") {
-				tweet();
+			if (command === "do-what-it-says") {
+				console.log("random.txt can't run do-what-it-says itself.");
+				return;
 			}
-			else if (command === "spotify-this-song") {
-				song();
-			}
-			else if (command === "movie-this") {
-				movie();
-			}
-			else {
-				console.log("Sorry, only valid commands at this time are: my-tweets, spotify-this-song, movie-this, do-what-it-says")
-			}
+			runCommand(command);
 		}
 	});
 }
-
